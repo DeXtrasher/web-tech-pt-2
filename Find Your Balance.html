@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Find Your Balance.css">
+    <title> Find Your Balance </title>
+</head>
+<body style="background-color: #89b2ca; height: 100%; font-family: PT Sans Narrow;">
+    <div class="headers">
+        <div class="headtext1">
+           <button class="buttons" style="float: left; margin-top: 2%; margin-left: 2%"> a game by Shivansh Kapoor </button> 
+           <button class="buttons" style="float: right; margin-top: 2%; margin-right: 2%;"> INSTRUCTIONS </button>
+        </div>
+    </div>
+    <div class="title">
+        FIND YOUR BALANCE
+    </div>
+    <div class="paragraph" style="margin-top: 1%;"> 
+        Brands, deals, offers, vouchers - you're surrounded by TONS of these every day!
+        Can you play the role of a smart consumer and maintain the balance between the consumers 
+        and the market? 
+    </div>
+    <div class="board" style="float: right; position: absolute; width: 100%;">
+        <img src="D:\Web Tech (Sem 5)\No1 (EoT Game)\Game Board.jpg" alt="Game Board" width="40%">
+    </div>
+    <div class="cardpile1">
+        <img class="card1" src="D:\Web Tech (Sem 5)\No1 (EoT Game)\All cards\1-1.jpg" alt="Card1" style="width: 20%; height: auto;">
+        <img class="card2" src="D:\Web Tech (Sem 5)\No1 (EoT Game)\All cards\1-2.jpg" alt="Card2" style="width: 20%; height: auto;">
+    </div>
+    <div class="paragraph" style="top: 90%; font-size: large;"> 
+        <i> Suitable for 4-10 players. </i>
+    </div>
+    <div class="cardpile2">
+        <img class="card1" src="D:\Web Tech (Sem 5)\No1 (EoT Game)\All cards\8-1.jpg" alt="disCard1" style="width: 20%; height: auto;">
+        <img class="card2" src="D:\Web Tech (Sem 5)\No1 (EoT Game)\All cards\8-2.jpg" alt="disCard2" style="width: 20%; height: auto;">
+    </div>
+    <div id="overlay">
+        &nbsp;
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"> </script>
+    <script>
+        $(document).ready(function(){
+            $( ".cardpile1" ).on( "click", function() {
+                $( "#overlay" ).toggle("slow");
+            });
+        });
+    </script>
+</body>
+</html>

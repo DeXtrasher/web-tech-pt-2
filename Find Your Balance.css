@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=PT Sans Narrow");
+@import url("https://fonts.googleapis.com/css?family=Hammersmith One");
+
+#overlay {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.headers {
+    position: relative;
+    display: grid;
+    background-color: white;
+    width: 100%;
+    height: 12vh;
+    bottom: 100%;
+}
+
+.buttons {
+    font-family: "PT Sans Narrow";
+    padding: 4px 30px;
+    background-color: white;
+    font-weight: 600;
+    font-size: larger;
+    border: none;
+    z-index: 1;
+}
+
+.buttons:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.title {
+    width: 50%;
+    font-family: "Hammersmith One";
+    font-weight: 1000;
+    text-align: left;
+    margin-top: 4%;
+    margin-left: 1%;
+    font-size: 400%;
+    position: relative;
+}
+
+.paragraph {
+    font-family: "PT Sans Narrow";
+    text-align: left;
+    position: absolute;
+    font-weight: 100;
+    margin-left: 1%;
+    font-size: 175%;
+    max-width: 50vw;
+}
+
+.board {
+    position: fixed;
+    top: 15%;
+    display: flex;
+    flex-shrink: 0;
+    left: 55%;
+    float: right;
+}
+
+.game-piece {
+    position: absolute;
+    width: 1.8%;
+    height: 5%;
+    background-color: #fecc53;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: white;
+    border-width: 10%;
+    top: 47.5%;
+}
+
+.cardpile1 {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+}
+
+.cardpile2 {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    bottom: 0%;
+    left: 25%;
+}
+
+.card1 {
+    position: absolute;
+    z-index: 2;
+}
+.card2 {
+    margin-top: -5px;
+    margin-left: -5px;
+    position: absolute;
+    z-index: 1;
+}
+
+
+/*.discard-pile {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 0%;
+    left: 85%;
+}
+
+.dcard1 {
+    position: absolute;
+    z-index: 1;
+}
+.dcard2 {
+    margin-top: -5px;
+    margin-left: -5px;
+    position: absolute;
+    z-index: 2;
+}
+.dcard3 {
+    margin-top: -5px;
+    margin-left: -5px;
+    position: absolute;
+    z-index: 3;
+}
+*/
