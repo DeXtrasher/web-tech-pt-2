@@ -9,48 +9,116 @@
 <body style="background-color: #89b2ca; height: 100%; font-family: PT Sans Narrow;">
     <div class="headers">
         <div class="headtext1">
-           <button class="buttons" style="float: left; margin-top: 2%; margin-left: 2%"> a game by Shivansh Kapoor </button> 
-           <button class="buttons" style="float: right; margin-top: 2%; margin-right: 2%;"> INSTRUCTIONS </button>
+           <button class="buttons" style="float: left; margin-top: 2%; margin-left: 2%" 
+           onclick="parent.open('https://ixd.anu.edu.in/home/2023/01/06/shivansh-kapoor/')"> a game by Shivansh Kapoor </button> 
+           <button class="buttons" style="float: right; margin-top: 2%; margin-right: 2%;"
+           onclick="parent.open('https://drive.google.com/file/d/1a7EWA9v5_TkN1KUkVwCpAdbkJHKhD9EE/view?usp=sharing')"> 
+           INSTRUCTIONS </button>
         </div>
     </div>
     <div class="title">
         FIND YOUR BALANCE
     </div>
-    <div class="paragraph" style="margin-top: 1%;"> 
+    <div class="paragraph" style="margin-top: 1%; margin-bottom: 1%;"> 
         Brands, deals, offers, vouchers - you're surrounded by TONS of these every day!
         Can you play the role of a smart consumer and maintain the balance between the consumers 
         and the market? 
     </div>
     <div class="board" style="float: right; position: absolute; width: 100%;">
-        <img src="Game Board.jpg" alt="Game Board" width="40%">
+        <img src="Game Board.gif" alt="Game Board" width="40%">
     </div>
-    <div class="cardpile1">
+    <div class="cardpile1" style="cursor: pointer;">
         <img class="card1" src="1-1.jpg" alt="Card1" style="width: 20%; height: auto;">
         <img class="card2" src="1-2.jpg" alt="Card2" style="width: 20%; height: auto;">
     </div>
-    <div class="paragraph" style="top: 90%; font-size: large;"> 
-        <i> Suitable for 4-10 players. </i>
-    </div>
-    <div class="cardpile2">
+    <div class="cardpile2" style="cursor: pointer;">
         <img class="dcard1" src="8-1.jpg" alt="disCard1" style="width: 20%; height: auto;">
         <img class="dcard2" src="8-2.jpg" alt="disCard2" style="width: 20%; height: auto;">
+    </div>
+    <div class="paragraph" style="font-size: large; display: inline-block; margin-top: 14%;"> 
+        <i> Suitable for 4-10 players. </i>
     </div>
     <div id="overlay">
         &nbsp;
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"> </script>
     <script>
+        var clicker1 = 0;
+        var clicker2 = 0;
         $(document).ready(function(){
             $( ".cardpile1" ).on( "click", function() {
-                $( "#overlay" ).css({display: 'block'});
-                $( ".card1" ).css({ 
+                if (clicker1 == 0) {
+                    $( "#overlay" ).css({display: 'block', zIndex: '2'})
+                    $( ".card1" ).css({ 
                         transitionDuration: '1000ms',
-                        transform: 'translate(50%, -50%) scale(1.5)'
+                        transform: 'translate(50%, -50%) scale(1.5)',
+                        rotate: '-20deg'
                     })
-                $( ".card2" ).css({ 
-                    transitionDuration: '1000ms',
-                    transform: 'translate(300%, -50%) scale(1.5)'
-                })
+                    $( ".card2" ).css({ 
+                        zIndex: '3',
+                        transitionDuration: '1000ms',
+                        transform: 'translate(300%, -100%) scale(1.5)',
+                        rotate: '20deg'
+                    })
+                    $( ".dcard1" ).css('zIndex', '2')
+                    $( ".dcard2" ).css('zIndex', '1')
+                    clicker1 = 1;
+                } else {
+                    $( "#overlay" ).css({display: 'none', zIndex: '2'})
+                    $( ".card1" ).css({ 
+                        transitionDuration: '1000ms',
+                        transform: 'translate(0%, 0%) scale(1)',
+                        rotate: '0deg',
+                        zIndex: '3'
+                    })
+                    $( ".card2" ).css({ 
+                        zIndex: '3',
+                        transitionDuration: '1000ms',
+                        transform: 'translate(0%, 0%) scale(1)',
+                        rotate: '0deg',
+                        zIndex: '2'
+                    })
+                    $( ".dcard1" ).css('zIndex', '3')
+                    $( ".dcard2" ).css('zIndex', '2')
+                    clicker1 = 0;
+                }
+            });
+            $( ".cardpile2" ).on( "click", function() {
+                if (clicker2 == 0) {
+                    $( "#overlay" ).css({display: 'block'})
+                    $( ".dcard1" ).css({ 
+                        transitionDuration: '1000ms',
+                        transform: 'translate(50%, -50%) scale(1.5)',
+                        rotate: '-20deg'
+                    })
+                    $( ".dcard2" ).css({ 
+                        zIndex: '3',
+                        transitionDuration: '1000ms',
+                        transform: 'translate(300%, -100%) scale(1.5)',
+                        rotate: '20deg'
+                    })
+                    $( ".card1" ).css('zIndex', '2')
+                    $( ".card2" ).css('zIndex', '1')
+                    clicker2 = 1;
+                } else {
+                    $( "#overlay" ).css({display: 'none'})
+                    $( ".dcard1" ).css({ 
+                        transitionDuration: '1000ms',
+                        transform: 'translate(0%, 0%) scale(1)',
+                        rotate: '0deg',
+                        zIndex: '3'
+                    })
+                    $( ".dcard2" ).css({ 
+                        zIndex: '3',
+                        transitionDuration: '1000ms',
+                        transform: 'translate(0%, 0%) scale(1)',
+                        rotate: '0deg',
+                        zIndex: '2'
+                    })
+                    $( ".card1" ).css('zIndex', '3')
+                    $( ".card2" ).css('zIndex', '2')
+                    clicker2 = 0;
+                }
             });
         });
     </script>
