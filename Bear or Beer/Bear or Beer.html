@@ -102,6 +102,12 @@
             console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
             console.log("User response successful.")
         });
+        annyang.addCallback('errorPermissionBlocked', function() {
+            window.alert("Please turn on the microphone for the game to run smoothly!");
+        });
+        annyang.addCallback('errorPermissionDenied', function() {
+            window.alert("Please turn on the microphone for the game to run smoothly!");
+        });
         function showoverlay() {
             document.querySelector("#overlay").setAttribute('style', 'display: block');
         }
