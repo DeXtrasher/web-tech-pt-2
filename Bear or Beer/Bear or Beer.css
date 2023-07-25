@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css?family=Black Han Sans");
+
+body, html {
+    width: 99.7%;
+    height: 99.4%;
+}
+
+.game-title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    color: antiquewhite;
+    font-family: "Black Han Sans";
+    font-size: 1.7vw;
+}
+
+#gameplay-box {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-row-gap: 1.5em;
+    grid-column-gap: 1.5em;
+    grid-template-columns: auto auto auto auto auto auto;
+    width: 30vw;
+    place-items: center;
+    margin: 0 auto 0 auto;
+}
+
+.instruction-box {
+    top: 16%;
+    position: absolute;
+    color: antiquewhite;
+    font-family: "Black Han Sans";
+    font-size: 2vw;
+    margin-left: 210%;
+    display: none;
+    width: 50%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.playbutton {
+    background-image: radial-gradient(yellow, orangered);
+    border-style: none;
+    border-color: yellow;
+    border-radius: 60px;
+    width: 13%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3% auto 0 auto;
+    cursor: pointer;
+}
+
+.variable-text-box {
+    position: relative;
+    font-family: "Black Han Sans";
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 1px 1px 5px black;
+    font-size: 2vw;
+}
+
+.letter, .title-letter {
+    display: inline-block;
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    left: 3.5vw;
+    top: 2vh;
+    width: 90vw;
+    height: 90vh;
+    padding: 25px;
+    background-color: black;
+    opacity: 1;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.overlay-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    text-align: center;
+    grid-row-gap: 2em;
+    grid-column-gap: 1.5em;
+}
+
+.example-icon {
+    width: 20%;
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    margin: 0 auto;
+}
+
+.dir1 {
+    color: antiquewhite;
+    font-family: "Black Han Sans";
+    font-size: 1.5vw;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.dir2 {
+    color: antiquewhite;
+    font-family: "Black Han Sans";
+    font-size: 1.5vw;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    text-align: left;
+}
+
+.howtoplay {
+    color: antiquewhite;
+    font-family: "Black Han Sans";
+    font-size: 4vw;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.instructionbutton {
+    border-style: none;
+    border-radius: 60px;
+    width: 13%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3% auto 0 auto;
+    cursor: pointer;
+    background-color: orangered;
+}
+
+.variable-text-box-2 {
+    position: relative;
+    font-family: "Black Han Sans";
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 1px 1px 5px black;
+    font-size: 2vw;
+}

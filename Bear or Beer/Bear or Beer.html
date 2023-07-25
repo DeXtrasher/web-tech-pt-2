@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bear or Beer? </title>
+    <link rel="stylesheet" href="Bear or Beer.css">
+</head>
+
+<body style="background-color: #0d0d0d;">
+    <div class="game-title">
+        <h1 class="title"> <div class="title-letter">B</div><div class="title-letter">e</div><div class="title-letter">a</div><div class="title-letter">r</div> <div class="title-letter">o</div><div class="title-letter">r</div> <div class="title-letter">B</div><div class="title-letter">e</div><div class="title-letter">e</div><div class="title-letter">r</div><div class="title-letter">?</div> </h1>
+    </div>
+    <div id="gameplay-box">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/raccoon.png" alt="raccoon">
+        <img class="icon rotate2" data-name="regular" src="Images/Drinks/soda.png" alt="soda">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/polar-bear.png" alt="polar-bear">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/wolf.png" alt="wolf">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/water.png" alt="water">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/gorilla.png" alt="gorilla">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/water.png" alt="water">
+        <img class="icon rotate2" data-name="regular" src="Images/Drinks/cocktail-2.png" alt="cocktail-2">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/panda.png" alt="panda">
+        <img class="icon rotate2" data-name="regular" src="Images/Drinks/cocktail.png" alt="cocktail">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/gorilla.png" alt="gorilla">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/polar-bear.png" alt="polar-bear">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/wolf.png" alt="wolf">
+        <img class="icon rotate2" data-name="regular" src="Images/Drinks/mocktail.png" alt="mocktail">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/soda.png" alt="soda">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/gorilla.png" alt="gorilla">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/raccoon.png" alt="raccoon">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/polar-bear.png" alt="polar-bear">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/soda.png" alt="soda">
+        <img class="icon rotate2" data-name="regular" src="Images/Drinks/cocktail.png" alt="cocktail">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/panda.png" alt="panda">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/gorilla.png" alt="gorilla">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/cocktail-2.png" alt="cocktail-2">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/raccoon.png" alt="raccoon">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/cocktail-2.png" alt="cocktail-2">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/gorilla.png" alt="gorilla">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/water.png" alt="water">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/panda.png" alt="panda">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/polar-bear.png" alt="polar-bear">
+        <img class="icon rotate2" data-name="regular" src="Images/Drinks/soda.png" alt="soda">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/soda.png" alt="soda">
+        <img class="icon rotate2" data-name="regular" src="Images/Drinks/water.png" alt="water">
+        <img class="icon rotate1" data-name="regular" src="Images/Drinks/cocktail.png" alt="cocktail">
+        <img class="icon rotate2" data-name="regular" src="Images/Drinks/cocktail-2.png" alt="cocktail-2">
+        <img class="icon rotate1" data-name="regular" src="Images/Animals/polar-bear.png" alt="polar-bear">
+        <img class="icon rotate2" data-name="regular" src="Images/Animals/wolf.png" alt="wolf">
+        <div class="instruction-box">
+            Wait for the icon to appear...
+        </div>
+        <div class="instructionbutton" onclick="showoverlay()" style="position: absolute; top: 110%; margin-left: 250%; width: 40%;">
+            <div class="variable-text-box-2" style="font-size: 1.5vw;">
+                Instructions
+            </div>
+        </div>
+    </div>
+    <div class="playbutton" onclick="buttontransform()">
+        <div class="variable-text-box">
+            <div class="letter">P</div><div class="letter">L</div><div class="letter">A</div><div class="letter">Y</div><div class="letter">!</div>
+        </div>
+    </div>
+    <div id="overlay">
+        <div class="overlay-grid" onclick="hideoverlay()">
+            <div class="howtoplay"> How to Play </div>
+            <div class="dir1"> First, enable the microphone permission on your browser. Once you click play, the icons on the screen
+                will shuffle randomly; look out for a bear (or beer) icon! Once you spot the icon, say 'Bear!' or 'Beer!' directly
+                into your microphone. Once your voice is recognized, click on the bear (or beer) icon to win!
+            </div>
+            <div class="dir1"> Oh, and a timer will start ticking once the bear (or beer) appears on the screen. Good luck!
+            </div>
+            <div class="example-icon"> <img src="Images/Animals/bear.png" alt="bear"> </div>
+            <div class="dir2"> This is Mr Bear. When you spot him, say 'Bear!'</div>
+            <div class="example-icon"> <img src="Images/Drinks/beer.png" alt="bear"> </div>
+            <div class="dir2"> Mr Bear likes to drink beer. When you spot it, say 'Beer!' </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" 
+    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"> </script>
+    <script>
+        annyang.setLanguage('en-IN');
+        const commands = {'bear': bearrecognition, 'bare': bearrecognition, 'beer': beerrecognition};
+        annyang.addCommands(commands);
+        var startTime, startTime2, endTime, endTime2, timeDiff, timeDiff2, timeappear, interval, interval2, interval3, iconchoice, iconpos;
+        var countdown = 5;
+        var buttonclicker = 0;
+        var rotation1, rotation2, countdownanime, countdownanime2;
+        var loop2text = 0;
+        var gameend = 0;
+        var parentbox = document.querySelector("#gameplay-box");
+        annyang.start({paused: true}); 
+        annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
+            clearInterval(interval2);
+            countdownanime.pause();
+            console.log(userSaid); // sample output: 'hello'
+            console.log(commandText); // sample output: 'hello (there)'
+            console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+            console.log("User response successful.")
+        });
+        function showoverlay() {
+            document.querySelector("#overlay").setAttribute('style', 'display: block');
+        }
+        function hideoverlay() {
+            document.querySelector("#overlay").setAttribute('style', 'display: none');
+        }
+        function playbuttonanime() {
+            var tl = anime.timeline({
+                targets: '.playbutton',
+                keyframes: [
+                    {scale: 0, easing: 'easeInQuart', duration: 0},
+                    {scale: 2, easing: 'easeInQuart', duration: 300},
+                    {scale: 1, easing: 'easeOutBounce', duration: 1000}
+                ]
+            });
+            tl.add({
+                targets: '.letter',
+                delay: anime.stagger(75, {start: 0}),
+                keyframes: [
+                    {scale: 0, easing: 'easeInQuart', duration: 0},
+                    {scale: 1.5, easing: 'easeInQuart', duration: 300, rotate: 20},
+                    {scale: 1, easing: 'easeOutQuart', duration: 1200, rotate: 0}
+                ]
+            }, 0);
+            tl.add({
+                targets: '.title-letter',
+                delay: anime.stagger(100, {start: 0}),
+                opacity: [0, 1],
+                scale: [1.5, 1]
+            }, 0);
+            tl.add({
+                targets: '.icon',
+                keyframes: [
+                    {scale: 0, easing: 'easeInQuart', duration: 0},
+                    {scale: 1, easing: 'linear', duration: 500}
+                ]
+            }, 0);
+            tl.add({
+                targets: '.instructionbutton',
+                keyframes: [
+                    {opacity: 0, easing: 'easeInQuart', duration: 0},
+                    {opacity: 1, easing: 'linear', duration: 500}
+                ]
+            }, 0);
+        }
+        function buttontransform() {
+            if (gameend == 1) {
+                window.location.reload();
+            }
+            document.querySelector(".instructionbutton").setAttribute('style', 'display: none;')
+            if (buttonclicker == 0) {
+                var tl = anime.timeline({
+                targets: '.letter',
+                delay: anime.stagger(100, {start: 0}),
+                keyframes: [
+                    {scale: 0, easing: 'easeOutQuart', duration: 300, rotate: -20}
+                ]
+                });
+                tl.add({
+                targets: '.playbutton',
+                keyframes: [
+                    {scale: 1.5, easing: 'easeInSine', duration: 300, width: '40vw', height: '5%'},
+                    {scale: 1, easing: 'easeOutSine', duration: 1000, width: '90vw', height: '5%'}
+                ]  
+                });
+                document.querySelector('.playbutton').setAttribute("style", "cursor: default");
+                buttonclicker = 1;
+                playclick();
+            }
+        }
+        window.onload = playbuttonanime;
+        function start() {
+            startTime = performance.now();
+        };
+        function bearorbeer() {
+            var randomicon = Math.floor(Math.random() * 2);
+            console.log(randomicon);
+            return randomicon;
+        }
+        function bearbeerposition() {
+            var xpos = Math.floor(Math.random() * 6);
+            xpos += 1;
+            var ypos = Math.floor(Math.random() * 6);
+            ypos += 1;
+            var n = 6 * (xpos - 1) + ypos;
+            var gridelement = document.querySelector('.icon:nth-child(' + n + ')');
+            console.log(gridelement);
+            return gridelement;
+        }
+        function place() {
+            iconchoice = bearorbeer();
+            iconpos = bearbeerposition();
+            if (iconchoice == 0) {
+                iconpos.src = "Images/Drinks/beer.png"
+            } else {
+                iconpos.src = "Images/Animals/bear.png"
+            }
+            iconpos.setAttribute('data-name', 'special');
+            return iconpos;
+        }
+        /*function congrats() {
+            console.log("congrats!");
+        }
+        var selection = place();
+        selection.onclick = congrats;*/
+        function randomelemchanger() {
+            var randomicon2 = Math.floor(Math.random() * 10);
+            console.log(randomicon2);
+            var xpos2 = Math.floor(Math.random() * 6);
+            xpos2 += 1;
+            var ypos2 = Math.floor(Math.random() * 6);
+            ypos2 += 1;
+            var n2 = 6 * (xpos2 - 1) + ypos2;
+            var gridelement2 = document.querySelector('.icon:nth-child(' + n2 + ')');
+            console.log(gridelement2);
+            if (randomicon2 == 0) {
+                gridelement2.src = "Images/Animals/gorilla.png"
+            } else if (randomicon2 == 1) {
+                gridelement2.src = "Images/Animals/panda.png"
+            } else if (randomicon2 == 2) {
+                gridelement2.src = "Images/Animals/polar-bear.png"
+            } else if (randomicon2 == 3) {
+                gridelement2.src = "Images/Animals/raccoon.png"
+            } else if (randomicon2 == 4) {
+                gridelement2.src = "Images/Animals/wolf.png"
+            } else if (randomicon2 == 5) {
+                gridelement2.src = "Images/Drinks/cocktail.png"
+            } else if (randomicon2 == 6) {
+                gridelement2.src = "Images/Drinks/cocktail-2.png"
+            } else if (randomicon2 == 7) {
+                gridelement2.src = "Images/Drinks/mocktail.png"
+            } else if (randomicon2 == 8) {
+                gridelement2.src = "Images/Drinks/soda.png"
+            } else if (randomicon2 == 9) {
+                gridelement2.src = "Images/Drinks/water.png"
+            }
+            endTime = performance.now();
+            timeDiff = endTime - startTime;
+            timeDiff /= 1000;
+            console.log(timeDiff + " seconds");
+            if (timeDiff >= timeappear) {
+                clearInterval(interval);
+                place();
+                document.querySelector('.instruction-box').innerHTML = "Say the icon name OUT LOUD!"
+                annyang.resume();
+                interval2 = setInterval(voicetimer, 1000);
+                document.querySelector('.variable-text-box').setAttribute("style", "scale: 1; font-size: 3vw");
+                countdownanime = anime({
+                    targets: '.playbutton',
+                    duration: 6000,
+                    width: 0,
+                    easing: 'linear'
+                });
+            }
+        }
+        function bearbeertime() {
+            var timeafterappear = (Math.floor(Math.random() * 6)) + 5;
+            console.log(timeafterappear, "seconds to bear/beer");
+            return timeafterappear;
+        }
+        function voicetimer() {
+            console.log(countdown);
+            document.querySelector(".variable-text-box").innerHTML = countdown;
+            if (countdown == 0) {
+                console.log("Timeout. No valid response.")
+                document.querySelector(".instruction-box").innerHTML = "Time's up! You lose!"
+                rotation1.pause();
+                rotation2.pause();
+                annyang.pause();
+                clearInterval(interval2);
+                playagain();
+                return;
+            }
+            countdown -= 1;
+        }
+        function clicktimer() {
+            console.log(countdown);
+            document.querySelector(".variable-text-box").innerHTML = countdown;
+            if (countdown == 0) {
+                console.log("Timeout. No valid response.")
+                document.querySelector(".instruction-box").innerHTML = "Time's up! You lose!"
+                rotation1.pause();
+                rotation2.pause();
+                countdownanime2.pause();
+                parentbox.removeEventListener('click', clickonicon);
+                clearInterval(interval3);
+                playagain();
+                return;
+            }
+            countdown -= 1;
+            loop2text += 1;
+        }
+        function playclick() {
+            start();
+            document.querySelector('.instruction-box').setAttribute("style", "display: inline-block;");
+            var displaytext = anime({
+                targets: '.instruction-box',
+                keyframes: [
+                    {opacity: 0, duration: 0},
+                    {opacity: 1, duration: 2000}
+                ]
+                });
+            timeappear = bearbeertime();
+            rotation1 = anime({
+                targets: '.rotate1',
+                rotate: 359,
+                duration: 5000,
+                loop: true,
+                easing: 'linear'
+                });
+            rotation2 = anime({
+                targets: '.rotate2',
+                rotate: -359,
+                duration: 5000,
+                loop: true,
+                easing: 'linear'
+            });
+            interval = setInterval(randomelemchanger, 1000);
+        }
+        function bearrecognition() {
+            if (iconchoice == 0) {
+                console.log("Wrong!")
+                document.querySelector(".instruction-box").innerHTML = "Incorrect! You lose!"
+                rotation1.pause();
+                rotation2.pause();
+                playagain();
+            } else if (iconchoice == 1)  {
+                console.log("Correct!")
+                document.querySelector('.playbutton').setAttribute("style", "width: 90vw");
+                document.querySelector(".instruction-box").innerHTML = "Click the icon!"
+                countdown = 3;
+                parentbox.addEventListener('click', clickonicon);
+                interval3 = setInterval(clicktimer, 1000);
+                countdownanime2 = anime({
+                    targets: '.playbutton',
+                    duration: 4000,
+                    width: 0,
+                    easing: 'linear'
+                });
+            }
+            annyang.pause();
+
+        }
+        function beerrecognition() {
+            if (iconchoice == 1) {
+                console.log("Wrong!")
+                document.querySelector(".instruction-box").innerHTML = "Incorrect! You lose!"
+                rotation1.pause();
+                rotation2.pause();
+                playagain();
+            } else if (iconchoice == 0) {
+                console.log("Correct!")
+                document.querySelector('.playbutton').setAttribute("style", "width: 90vw");
+                document.querySelector(".instruction-box").innerHTML = "Click the icon!"
+                countdown = 3;
+                parentbox.addEventListener('click', clickonicon);
+                interval3 = setInterval(clicktimer, 1000);
+                countdownanime2 = anime({
+                    targets: '.playbutton',
+                    duration: 4000,
+                    width: 0,
+                    easing: 'linear'
+                });
+            }
+            annyang.pause();
+        }
+        function clickonicon() {
+            clearInterval(interval3);
+            if (event.target.dataset.name == 'special') {
+                document.querySelector(".instruction-box").innerHTML = "Correct! You win!"
+            } else {
+                document.querySelector(".instruction-box").innerHTML = "Incorrect! You lose!"
+            }
+            rotation1.pause();
+            rotation2.pause();
+            countdownanime2.pause();
+            parentbox.removeEventListener('click', clickonicon);
+            playagain();
+        }
+        function playagain() {
+            buttonclicker = 0;
+            document.querySelector(".variable-text-box").innerHTML = "Play again?"
+            document.querySelector('.playbutton').setAttribute("style", "cursor: pointer");
+            document.querySelector('.variable-text-box').setAttribute("style", "font-size: 1.5vw");
+            var tl3 = anime({
+                targets: '.playbutton',
+                duration: 0,
+                width: '13%',
+                height: '8%',
+                easing: 'linear'
+            });
+            var tl2 = anime.timeline({
+                targets: '.playbutton',
+                keyframes: [
+                    {scale: 0, easing: 'easeInQuart', duration: 0},
+                    {scale: 1.8, easing: 'easeInQuart', duration: 300},
+                    {scale: 1, easing: 'easeOutBounce', duration: 1000}
+                ]
+            });
+            tl2.add({
+                targets: '.variable-text-box',
+                keyframes: [
+                    {scale: 0, easing: 'easeInQuart', duration: 0},
+                    {scale: 1.3, easing: 'easeInQuart', duration: 300, rotate: 10},
+                    {scale: 1, easing: 'easeOutQuart', duration: 1200, rotate: 0}
+                ]
+            }, 0);
+            gameend = 1;
+        }
+    </script>
+</body>
+
+</html>
