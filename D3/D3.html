@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> D3 </title>
+    <link rel="stylesheet" href="D3.css">
+</head>
+<body>
+    <div class="text"> Playing with D3 </div>
+    <div class="subtext"> Drag and drop the circles to create illustrations! </div>
+    <div id="svg-container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" 
+    integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var xpoint, ypoint;
+        const randomarray = [];
+        for (i = 1; i<=300; i++) {
+            xpoint = Math.floor(Math.random() * 1000) - 200;
+            ypoint = Math.floor(Math.random() * 1000) - 200;
+            randomarray.push({x: xpoint, y: ypoint});
+        }
+        console.log(randomarray);
+        const svgelem = d3.select('#svg-container')
+        .append('svg')
+        .attr('height', '80vh')
+        .attr('width', '100%')
+        .attr('viewBox', [0, 0, 600, 600])
+        .append('g')
+        .attr('cursor', 'grab');
+
+        svgelem
+        .selectAll('circle')
+        .data(randomarray)
+        .join('circle')
+        .attr('cx', (d) => (d.x))
+        .attr('cy', (d) => (d.y))
+        .attr('r', 15)
+        .attr("fill", (d) => d3.interpolateRainbow(d.x / 200))
+        .call(d3.drag()
+          .on("start", dragbegin)
+          .on("drag", dragcontinue)
+          .on("end", dragend));
+        
+          function dragbegin() {
+            d3.select(this).raise();
+            svgelem.attr('cursor', 'grabbing');
+          }
+
+          function dragcontinue(event, d) {
+            d3.select(this)
+            .attr('cx', d.x = event.x)
+            .attr('cy', d.y = event.y);
+          }
+
+          function dragend() {
+            svgelem.attr('cursor', 'grab');
+          }
+
+    </script>
+</body>
+</html>
